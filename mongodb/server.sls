@@ -48,6 +48,6 @@ mongodb_service:
     - file: {{ server.lock_dir }}
     - pkg: mongodb_packages
   - watch:
-    - file: /etc/mongodb.conf
+    - file: /etc/mongod.conf
 
 {%- endif %}
