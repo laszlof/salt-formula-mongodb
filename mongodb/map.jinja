@@ -1,20 +1,6 @@
 {% set server = salt['grains.filter_by']({
-    'Debian': {
-        'pkgs': ['mongodb-server', 'mongodb', 'mongodb-clients'],
-        'service': 'mongodb',
-        'lock_dir': "/var/lock/mongodb",
-        'logging': {},
-        'bind': {
-          'address': '127.0.0.1',
-          'port': 27017
-        },
-        'authorization': {},
-        'admin': {
-          'username': 'root'
-        }
-    },
     'RedHat': {
-        'pkgs': ['mongodb-server', 'mongodb', 'mongodb-clients'],
+        'pkgs': ['mongodb-org', 'mongodb-org-tools'],
         'service': 'mongod',
         'lock_dir': "/var/lock/mongodb",
         'logging': {},

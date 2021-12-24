@@ -1,6 +1,15 @@
 {%- from "mongodb/map.jinja" import server with context %}
 
 {%- if server.get('enabled', False) %}
+
+mongodb_repo:
+  pkgrepo.managed:
+    - humanname: MongoDB Repository
+    - baseurl: 'https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/{{ server.version }}/x86_64/'
+    - gpgcheck: 1
+    - enabled: True
+    - gpgkey: 'https://www.mongodb.org/static/pgp/server-{{ server.version }}.asc'
+
 mongodb_packages:
   pkg.installed:
   - names: {{ server.pkgs }}

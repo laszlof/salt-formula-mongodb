@@ -5,6 +5,7 @@ classes:
 parameters:
   mongodb:
     server:
+      version: 5.0
       enabled: true
       bind:
         address: 127.0.0.1
