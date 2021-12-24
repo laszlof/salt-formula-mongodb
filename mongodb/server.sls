@@ -14,9 +14,9 @@ mongodb_packages:
   pkg.installed:
   - names: {{ server.pkgs }}
 
-/etc/mongodb.conf:
+/etc/mongod.conf:
   file.managed:
-  - source: salt://mongodb/files/mongodb.conf
+  - source: salt://mongodb/files/mongod.conf
   - template: jinja
   - require:
     - pkg: mongodb_packages
